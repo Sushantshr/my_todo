@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">223671260025-supi0enj94mk4npv4bohnqlk6l6ra9h2.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://mytodo-4521d.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">223671260025</string>
+    <string name="google_api_key" translatable="false">AIzaSyA2eBWuScD7Xx2pOI8pG6-wZYbPuY8snzw</string>
+    <string name="google_app_id" translatable="false">1:223671260025:android:5d7ae99d8de84621aad5a8</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA2eBWuScD7Xx2pOI8pG6-wZYbPuY8snzw</string>
+    <string name="google_storage_bucket" translatable="false">mytodo-4521d.appspot.com</string>
+    <string name="project_id" translatable="false">mytodo-4521d</string>
+</resources>
