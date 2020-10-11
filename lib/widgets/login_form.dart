@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_todo/screens/home_screen.dart';
-import 'package:my_todo/services/AuthService.dart';
+import 'package:my_todo/services/auth_service.dart';
 
 class LoginForm extends StatefulWidget {
+  GlobalKey<ScaffoldState> scaffoldKey;
+
+  LoginForm({Key key, this.scaffoldKey}) : super(key: key);
   @override
   _LoginFormState createState() => _LoginFormState();
 }
@@ -10,6 +12,13 @@ class LoginForm extends StatefulWidget {
 class _LoginFormState extends State<LoginForm> {
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
+  bool _hidePassword = true;
+
+  void _toggle() {
+    setState(() {
+      _hidePassword = !_hidePassword;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +39,15 @@ class _LoginFormState extends State<LoginForm> {
         ),
         TextField(
           controller: _password,
-          obscureText: true,
+          obscureText: _hidePassword,
           decoration: InputDecoration(
+            suffixIcon: InkWell(
+              onTap: _toggle,
+              child: Icon(
+                Icons.remove_red_eye,
+                color: _hidePassword ? Colors.grey : Colors.red,
+              ),
+            ),
             // enabledBorder: const OutlineInputBorder(
             //   borderSide: const BorderSide(color: Colors.white),
             // ),
@@ -51,13 +67,18 @@ class _LoginFormState extends State<LoginForm> {
               var user = await AuthService.loginWithEmail(
                   email: email, password: password);
 
-              print(user);
+              var snackBar;
               if (user != null) {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (contect) {
-                  return HomeScreen();
-                }));
+                snackBar = SnackBar(
+                  content: Text("Successfully Logged In"),
+                );
+              } else {
+                snackBar = SnackBar(
+                  backgroundColor: Colors.red,
+                  content: Text("Some error occured, please try again."),
+                );
               }
+              widget.scaffoldKey.currentState.showSnackBar(snackBar);
             },
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30),

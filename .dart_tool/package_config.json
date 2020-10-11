@@ -81,19 +81,19 @@
     },
     {
       "name": "firebase_auth",
-      "rootUri": "file:///home/sushant/projects/flutter-1.2/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.18.0+1",
+      "rootUri": "file:///home/sushant/projects/flutter-1.2/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.18.1+1",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
     {
       "name": "firebase_auth_platform_interface",
-      "rootUri": "file:///home/sushant/projects/flutter-1.2/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_platform_interface-2.0.1",
+      "rootUri": "file:///home/sushant/projects/flutter-1.2/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_platform_interface-2.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
     {
       "name": "firebase_auth_web",
-      "rootUri": "file:///home/sushant/projects/flutter-1.2/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_web-0.3.0+1",
+      "rootUri": "file:///home/sushant/projects/flutter-1.2/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_web-0.3.1",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
@@ -120,6 +120,12 @@
       "rootUri": "file:///home/sushant/projects/flutter-1.2/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "2.9"
+    },
+    {
+      "name": "flutter_facebook_auth",
+      "rootUri": "file:///home/sushant/projects/flutter-1.2/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_facebook_auth-0.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
     },
     {
       "name": "flutter_riverpod",
@@ -332,7 +338,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-09-26T03:31:48.617416Z",
+  "generated": "2020-10-07T14:04:16.528109Z",
   "generator": "pub",
   "generatorVersion": "2.9.2"
 }

@@ -8,6 +8,43 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:223671260025:android:7736dd0568dc40c6aad5a8",
+        "android_client_info": {
+          "package_name": "com.company.my_todo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "223671260025-ou4glgqtip7jl7or2ua8cihvkaf25ong.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.company.my_todo",
+            "certificate_hash": "d6bafe7ef9f544906b4440e354ef099791b2ff8a"
+          }
+        },
+        {
+          "client_id": "223671260025-supi0enj94mk4npv4bohnqlk6l6ra9h2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2eBWuScD7Xx2pOI8pG6-wZYbPuY8snzw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "223671260025-supi0enj94mk4npv4bohnqlk6l6ra9h2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:223671260025:android:5d7ae99d8de84621aad5a8",
         "android_client_info": {
           "package_name": "com.example.my_todo"

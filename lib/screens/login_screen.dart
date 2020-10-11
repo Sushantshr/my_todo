@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:my_todo/services/AuthService.dart';
+import 'package:my_todo/services/auth_service.dart';
 import 'package:my_todo/widgets/login_form.dart';
 
 class LoginScreen extends StatelessWidget {
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
       // backgroundColor: Colors.black,
       body: Container(
         height: double.infinity,
@@ -26,7 +28,9 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              LoginForm(),
+              LoginForm(
+                scaffoldKey: scaffoldKey,
+              ),
               Text(
                 '- Or -',
                 style: TextStyle(fontSize: 20),
@@ -37,13 +41,25 @@ class LoginScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  _buildSocialButton('assets/logos/facebook.svg',
-                      AuthService.signInWithGoogle),
+                  _buildSocialButton(
+                    'assets/logos/facebook.svg',
+                    () async {
+                      try {
+                        final user = await AuthService.signInWithFacebook();
+                      } catch (err) {
+                        print(err.toString());
+                      }
+                    },
+                  ),
                   SizedBox(
                     width: 10,
                   ),
                   _buildSocialButton(
-                      'assets/logos/google.svg', AuthService.signInWithGoogle),
+                    'assets/logos/google.svg',
+                    () async {
+                      final user = await AuthService.signInWithGoogle();
+                    },
+                  ),
                 ],
               )
             ],
@@ -55,7 +71,7 @@ class LoginScreen extends StatelessWidget {
 
   Widget _buildSocialButton(String logo, Function func) {
     return InkWell(
-      onTap: () => func,
+      onTap: func,
       child: Container(
         height: 50,
         width: 50,
